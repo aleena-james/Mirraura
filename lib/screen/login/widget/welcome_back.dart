@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:mirraura/constant.dart';
 
-
 class WelcomeBack extends StatelessWidget {
   const WelcomeBack({
     Key? key,
   }) : super(key: key);
 
   @override
-  Widget buildAppBar(BuildContext context) {
+  Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
       child: Text(
         'Welcome back!',
         style: TextStyle(
@@ -21,6 +20,7 @@ class WelcomeBack extends StatelessWidget {
       ),
     );
   }
+<<<<<<< HEAD
 
   @override
   Widget build(BuildContext context) {
@@ -28,3 +28,6 @@ class WelcomeBack extends StatelessWidget {
     throw UnimplementedError();
   }
 }
+=======
+}
+>>>>>>> f9c6edfcfdb154611a47c565c29a159c3347a842
