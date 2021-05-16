@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+import 'package:mirraura/constant.dart';
+ class SigninButton extends StatelessWidget{
+           const SigninButton({Key? key,}): super(key:key);
+         
+         @override
+         Widget buildAppBar(BuildContext context){
+         return Container(
+           padding: const EdgeInsets.symmetric(
+             horizontal:30,
+           ),
+           child: FlatButton(
+             shape: RoundedRectangleBorder(
+               borderRadius: BorderRadius.circular(36),
+
+             ),
+             color: spPrimaryColor,
+             onPressed: () {},
+             child:Container(
+               width: double.infinity,
+               padding: const EdgeInsets.symmetric(
+                 vertical: 16,
+               ),
+               alignment: Alignment.center,
+               child: Text('Sign in',
+               style: TextStyle(
+                color: Colors.white,
+               ),),
+             ),
+           ),
+         );
+         }
+
+  
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  } }
+        
