@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mirraura/constant.dart';
 
 class InputTextFeild extends StatelessWidget {
-   const InputTextFeild({Key key, this.label,this.onChange,this.password=false,}) : super(key: key);
+   const InputTextFeild({Key? key, this.label,this.onChange,this.password=false,}) : super(key: key);
    final String label;
    final Function onChange;
    final bool password;
