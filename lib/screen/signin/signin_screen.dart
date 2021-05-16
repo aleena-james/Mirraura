@@ -8,7 +8,7 @@ class SigninScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(content),
+      appBar: buildAppBar(context),
       body: Column(
         padding: const EdgeInsets.symmetric(
           horizontal: 30,
@@ -43,7 +43,7 @@ class SigninScreen extends StatelessWidget {
           color: spPrimaryTextColor,
         ),
         onPressed: () {
-          Navigator.pop(context);
+          Navigator.pop(content);
         },
       ),
     );
