@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mirraura/constant.dart';
 import 'package:mirraura/screen/signin/widget/intput_text_field.dart';
 
-import 'intput_text_field.dart';
-
 class SigninForm extends StatelessWidget {
   const SigninForm({
     Key? key,
@@ -27,5 +25,11 @@ class SigninForm extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    
+    throw UnimplementedError();
   }
 }
