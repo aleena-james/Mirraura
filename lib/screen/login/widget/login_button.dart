@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mirraura/constant.dart';
-import 'package:mirraura/screen/main/main_screen.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -17,14 +16,7 @@ class LoginButton extends StatelessWidget {
         ),
         color: spPrimaryColor,
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return MainScreen();
-              },
-            ),
-          );
+          
         },
         child: Container(
           width: double.infinity,
