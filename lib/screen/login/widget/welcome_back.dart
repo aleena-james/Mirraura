@@ -4,7 +4,7 @@ import 'package:mirraura/constant.dart';
 
 class WelcomeBack extends StatelessWidget {
   const WelcomeBack({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -20,5 +20,11 @@ class WelcomeBack extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    
+    throw UnimplementedError();
   }
 }

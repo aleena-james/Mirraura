@@ -3,9 +3,9 @@ import 'package:mirraura/constant.dart';
 
 class InputTextField extends StatelessWidget {
   const InputTextField({
-    Key key,
-    this.label,
-    this.onChange, this.password = false,
+    Key? key,
+    required this.label,
+    required this.onChange, this.password = false,
   }) : super(key: key);
 
   final String label;
@@ -15,7 +15,7 @@ class InputTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      onChanged: onChange,
+      onChanged: onChange(),
       obscureText: password,
       cursorColor: Colors.grey,
       decoration: InputDecoration(
