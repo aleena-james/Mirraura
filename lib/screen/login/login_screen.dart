@@ -42,9 +42,10 @@ class LoginScreen extends StatelessWidget {
                   style: TextStyle(
                     color: spPrimaryColor,
                   ),
-                  recognizer: TapGestureRecognizer()..onTap = () {
-                    Navigator.pop(context);
-                  },
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      Navigator.pop(context);
+                    },
                 ),
               ]),
             ),
