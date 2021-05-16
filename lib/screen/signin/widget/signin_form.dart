@@ -5,30 +5,26 @@ class SigninForm extends StatelessWidget {
   const SigninForm({
     Key? key,
   }) : super(key: key);
+
   @override
-  Widget buildAppBar(BuildContext context) {
+  Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
       child: Column(
         children: <Widget>[
           InputTextFeild(label: 'Name', onChange: (value) {}),
           SizedBox(
-            height: 16,
+     height: 16,
           ),
           InputTextFeild(label: 'Email', onChange: (value) {}),
           SizedBox(
-            height: 16,
+     height: 16,
           ),
           InputTextFeild(
-              label: 'Password', password: true, onChange: (value) {}),
+       label: 'Password', password: true, onChange: (value) {}),
         ],
       ),
     );
   }
-
-  @override
-  Widget build(BuildContext context) {
-    
-    throw UnimplementedError();
-  }
 }
+ 
