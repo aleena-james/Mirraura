@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mirraura/screen/login/widget/input_text_field.dart';
 import 'package:mirraura/constant.dart';
 
+
 class LoginForm extends StatelessWidget {
   const LoginForm({
     Key? key,
@@ -16,18 +17,18 @@ class LoginForm extends StatelessWidget {
       ),
       child: Column(
         children: <Widget>[
-          InputTextField(
-            label: 'Email',
-            onChange: (value) {},
-          ),
-          SizedBox(height: 16,),
-          InputTextField(
-            label: 'Password',
-            password: true,
-            onChange: (value) {},
-          ),
-        ],
-      ),
-    );
+    
+    InputTextField(
+      label: 'Email',
+      onChange: (value) {},
+    ),
+    SizedBox(height: 16,),
+    InputTextField(
+      label: 'Password',
+      password: true,
+      onChange: (value) {},),
+        ],),);
+
   }
 }
+

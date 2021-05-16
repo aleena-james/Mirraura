@@ -16,6 +16,9 @@ class LoginScreen extends StatelessWidget {
         children: <Widget>[
           WelcomeBack(),
           LoginForm(),
+      
+      
+    
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             alignment: Alignment.centerRight,
@@ -27,6 +30,7 @@ class LoginScreen extends StatelessWidget {
           SizedBox(
             height: 60,
           ),
+
           LoginButton(),
           Container(
             padding: const EdgeInsets.symmetric(
@@ -78,3 +82,4 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
+

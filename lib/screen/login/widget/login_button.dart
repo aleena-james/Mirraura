@@ -12,22 +12,22 @@ class LoginButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: FlatButton(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(36),
+    borderRadius: BorderRadius.circular(36),
         ),
         color: spPrimaryColor,
         onPressed: () {
-          
+    
         },
         child: Container(
-          width: double.infinity,
-          padding: const EdgeInsets.symmetric(vertical: 16),
-          alignment: Alignment.center,
-          child: Text(
-            'Login',
-            style: TextStyle(
-              color: Colors.white,
-            ),
-          ),
+    width: double.infinity,
+    padding: const EdgeInsets.symmetric(vertical: 16),
+    alignment: Alignment.center,
+    child: Text(
+      'Login',
+      style: TextStyle(
+        color: Colors.white,
+      ),
+    ),
         ),
       ),
     );

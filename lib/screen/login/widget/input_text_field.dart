@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:mirraura/constant.dart';
 
 class InputTextField extends StatelessWidget {
-  const InputTextField({
-    Key? key,
-    required this.label,
-    required this.onChange, this.password = false,
-  }) : super(key: key);
-
-  final String label;
+  final String label; 
   final Function onChange;
-  final bool password;
+  final bool password; 
+  const InputTextField({
+    Key? key, required this.label, required this.onChange, this.password = false
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,19 +19,19 @@ class InputTextField extends StatelessWidget {
         labelText: label,
         labelStyle: TextStyle(color: Colors.grey),
         border: UnderlineInputBorder(
-            borderSide: BorderSide(
-          color: spPrimaryColor,
-          width: 2,
+      borderSide: BorderSide(
+    color: spPrimaryColor,
+    width: 2,
         )),
         focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
-          color: spPrimaryColor,
-          width: 2,
+      borderSide: BorderSide(
+    color: spPrimaryColor,
+    width: 2,
         )),
         enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
-          color: Colors.grey,
-          width: 0.5,
+      borderSide: BorderSide(
+    color: Colors.grey,
+    width: 0.5,
         )),
       ),
     );
