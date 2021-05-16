@@ -1,3 +1,5 @@
+import 'dart:ui';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:mirraura/constant.dart';
 import 'package:mirraura/screen/signin/widget/welcome.dart';
@@ -26,20 +28,20 @@ class SigninScreen extends StatelessWidget {
     );
   }
 
-  AppBar buildAppBar(BuildContext context) {
+AppBar buildAppBar(BuildContext context) {
     return AppBar(
+      backgroundColor: spBackgroundColor,
+      elevation: 0,
+      centerTitle: true,
       title: Text(
-        'Sign',
+        'Sign up',
         style: TextStyle(
           color: spPrimaryTextColor,
         ),
       ),
-      backgroundColor: spBackgroundColor,
-      elevation: 0,
-      centerTitle: true,
       leading: IconButton(
         icon: Icon(
-          Icon.arrow_back_ios,
+          Icons.arrow_back_ios,
           color: spPrimaryTextColor,
         ),
         onPressed: () {
