@@ -26,7 +26,7 @@ class SigninScreen extends StatelessWidget {
     );
   }
 
-  AppBar buildAppBar(BuildContext content) {
+  AppBar buildAppBar(BuildContext context) {
     return AppBar(
       title: Text(
         'Sign',
@@ -43,7 +43,7 @@ class SigninScreen extends StatelessWidget {
           color: spPrimaryTextColor,
         ),
         onPressed: () {
-          Navigator.pop(content);
+          Navigator.pop(context);
         },
       ),
     );
