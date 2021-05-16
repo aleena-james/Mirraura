@@ -20,4 +20,3 @@ class WelcomeBack extends StatelessWidget {
       ),
     );
   }
-}
