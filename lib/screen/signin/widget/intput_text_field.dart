@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mirraura/constant.dart';
 
 class InputTextFeild extends StatelessWidget {
+
  final String label;
  final Function onChange;
  final bool password;
@@ -40,3 +41,4 @@ class InputTextFeild extends StatelessWidget {
           );
   }
 }
+  

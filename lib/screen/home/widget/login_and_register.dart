@@ -71,7 +71,7 @@ class LoginandRegister extends StatelessWidget {
                     child: Text(
                       'Login',
                       style: TextStyle(
-                        color: spPrimaryColor,
+                        color: Colors.white,
                       ),
                     ),
                   ),
