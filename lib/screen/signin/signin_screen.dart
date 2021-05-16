@@ -12,10 +12,6 @@ class SigninScreen extends StatelessWidget {
     return Scaffold(
       appBar: buildAppBar(context),
       body: Column(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 30,
-          vertical: 20,
-        ),
         children: <Widget>[
           Welcome(),
           SigninForm(),
@@ -28,7 +24,7 @@ class SigninScreen extends StatelessWidget {
     );
   }
 
-AppBar buildAppBar(BuildContext context) {
+  AppBar buildAppBar(BuildContext context) {
     return AppBar(
       backgroundColor: spBackgroundColor,
       elevation: 0,
