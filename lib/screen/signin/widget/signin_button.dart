@@ -1,9 +1,9 @@
-import 'packages:flutter/material.dart';
-
+import 'package:flutter/material.dart';
+import 'package:mirraura/constant.dart';
  class SigninButton extends StatelessWidget{
-           const SigninButton({Key key,}): super(key:key);
+           const SigninButton({Key? key,}): super(key:key);
          
-         @ovrride
+         @override
          Widget buildAppBar(BuildContext context){
          return Container(
            padding: const EdgeInsets.symmetric(
@@ -11,7 +11,7 @@ import 'packages:flutter/material.dart';
            ),
            child: FlatButton(
              shape: RoundedRectangleBorder(
-               borderRadius: BorderRadius.cicular(36),
+               borderRadius: BorderRadius.circular(36),
 
              ),
              color: spPrimaryColor,
@@ -29,5 +29,7 @@ import 'packages:flutter/material.dart';
              ),
            ),
          );
-         } }
+         }
+
+  Textstyle({Color color}) {} }
         
