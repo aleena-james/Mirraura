@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mirraura/constant.dart';
 
 class Welcome extends StatelessWidget{
-           const Welcome({Key key,}): super(key:key);
+           const Welcome({Key? key,}): super(key:key);
           @override
          Widget buildAppBar(BuildContext context){
          return Container(
@@ -15,4 +15,10 @@ class Welcome extends StatelessWidget{
           );
        
       }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
          }
