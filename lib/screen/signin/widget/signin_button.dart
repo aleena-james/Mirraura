@@ -15,15 +15,15 @@ import 'package:mirraura/constant.dart';
 
              ),
              color: spPrimaryColor,
-             onPressed: ,
+             onPressed: () {},
              child:Container(
                width: double.infinity,
-               padding: cont EdgeInsets.symmetric(
+               padding: const EdgeInsets.symmetric(
                  vertical: 16,
                ),
                alignment: Alignment.center,
                child: Text('Sign in',
-               style: Textstyle(
+               style: TextStyle(
                 color: Colors.white,
                ),),
              ),
@@ -31,5 +31,11 @@ import 'package:mirraura/constant.dart';
          );
          }
 
-  Textstyle({Color color}) {} }
+  
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  } }
         
