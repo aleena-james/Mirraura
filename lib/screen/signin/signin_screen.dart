@@ -1,5 +1,3 @@
-import 'dart:ui';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:mirraura/constant.dart';
 import 'package:mirraura/screen/signin/widget/welcome.dart';
@@ -18,7 +16,7 @@ class SigninScreen extends StatelessWidget {
           SizedBox(
             height: 60,
           ),
-          SigninButton(),
+         SigninButton(),
         ],
       ),
     );
