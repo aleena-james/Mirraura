@@ -8,7 +8,7 @@ class SigninScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(content),
+      appBar: buildAppBar(context),
       body: Column(
         padding: const EdgeInsets.symmetric(
           horizontal: 30,
@@ -26,7 +26,7 @@ class SigninScreen extends StatelessWidget {
     );
   }
 
-  AppBar buildAppBar(BuildContext content) {
+  AppBar buildAppBar(BuildContext context) {
     return AppBar(
       title: Text(
         'Sign',
