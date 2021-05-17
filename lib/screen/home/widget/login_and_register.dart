@@ -17,18 +17,14 @@ class LoginandRegister extends StatelessWidget {
           child: Row(
             children: <Widget>[
               Expanded(
-                child: FlatButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(36),
-                  ),
-                  color: spPrimaryColor,
+                child: TextButton(
+                  style:TextButton.styleFrom(
+                    backgroundColor: spPrimaryColor,),
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) {
-                          return SigninScreen();
-                        },
+                        builder: (context) => SigninScreen(),
                       ),
                     );
                   },
@@ -49,18 +45,14 @@ class LoginandRegister extends StatelessWidget {
                 width: 30,
               ),
               Expanded(
-                child: FlatButton(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(36),
-                      side: BorderSide(color: spPrimaryColor)),
-                  color: spPrimaryColor,
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                  backgroundColor: spPrimaryColor,),
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) {
-                          return LoginScreen();
-                        },
+                        builder: (context) => LoginScreen(),
                       ),
                     );
                   },

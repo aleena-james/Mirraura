@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: <Widget>[
-          Image.asset('********'),
+          Text('********'),
           SlideDot(),
           SizedBox(
             height: 20,

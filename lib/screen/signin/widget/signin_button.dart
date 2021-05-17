@@ -4,17 +4,14 @@ import 'package:mirraura/constant.dart';
            const SigninButton({Key? key,}): super(key:key);
          
          @override
-         Widget buildAppBar(BuildContext context){
+         Widget build(BuildContext context){
          return Container(
            padding: const EdgeInsets.symmetric(
              horizontal:30,
            ),
-           child: FlatButton(
-             shape: RoundedRectangleBorder(
-               borderRadius: BorderRadius.circular(36),
-
-             ),
-             color: spPrimaryColor,
+           child: TextButton(
+             style: TextButton.styleFrom(
+               backgroundColor: spPrimaryColor, ),
              onPressed: () {},
              child:Container(
                width: double.infinity,
@@ -30,12 +27,5 @@ import 'package:mirraura/constant.dart';
            ),
          );
          }
-
-  
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
-  } }
+}
         

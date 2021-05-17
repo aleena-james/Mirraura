@@ -11,8 +11,8 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: SizedBox(
+        child: new Wrap(
         children: <Widget>[
           WelcomeBack(),
           LoginForm(),
@@ -56,7 +56,7 @@ class LoginScreen extends StatelessWidget {
           )
         ],
       ),
-    );
+    ),);
   }
 
   AppBar buildAppBar(BuildContext context) {
