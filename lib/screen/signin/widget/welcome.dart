@@ -4,7 +4,7 @@ import 'package:mirraura/constant.dart';
 class Welcome extends StatelessWidget{
            const Welcome({Key? key,}): super(key:key);
           @override
-         Widget buildAppBar(BuildContext context){
+         Widget build(BuildContext context){
          return Container(
           child: Text('Welcome',
           style: TextStyle(
@@ -15,10 +15,4 @@ class Welcome extends StatelessWidget{
           );
        
       }
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
-  }
-         }
+ }

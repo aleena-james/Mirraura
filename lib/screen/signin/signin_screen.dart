@@ -1,5 +1,4 @@
 import 'dart:ui';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:mirraura/constant.dart';
 import 'package:mirraura/screen/signin/widget/welcome.dart';
@@ -11,7 +10,8 @@ class SigninScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: Column(
+      body: SizedBox(
+        child: new Wrap(
         children: <Widget>[
           Welcome(),
           SigninForm(),
@@ -21,7 +21,7 @@ class SigninScreen extends StatelessWidget {
           SigninButton(),
         ],
       ),
-    );
+    ),);
   }
 
   AppBar buildAppBar(BuildContext context) {

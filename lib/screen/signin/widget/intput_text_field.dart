@@ -7,7 +7,7 @@ class InputTextFeild extends StatelessWidget {
    final Function onChange;
    final bool password;
                @override
-               Widget buildAppBar(BuildContext content){
+               Widget build(BuildContext content){
                return TextField(
                  obscureText: password,
                  onChanged: onChange(),
@@ -37,10 +37,6 @@ class InputTextFeild extends StatelessWidget {
                );
             
           
+          
   }
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
-  }}
+}

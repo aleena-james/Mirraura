@@ -12,12 +12,9 @@ import 'package:mirraura/constant.dart';
       padding: const EdgeInsets.symmetric(
         horizontal:30,
       ),
-      child: FlatButton(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(36),
-
-        ),
-        color: spPrimaryColor,
+      child: TextButton(
+        style:TextButton.styleFrom(
+          backgroundColor: spPrimaryColor, ),
         onPressed: () {},
         child:Container(
           width: double.infinity,
