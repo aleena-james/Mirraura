@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-Color spBackgroundColor = Color(0xFFFFFFFF);
-Color spPrimaryColor = Color(0xFFB98068);
-Color spPrimaryTextColor = Color(0xFF8C746A);
-Color spSecondTextColor = Color(0xFFB98068);
-Color spSecondColor = Color(0xFFC28E79);
-Color spTitleTextColor = Color(0xFF2D140D);
-
+Color spBackgroundColor = Colors.white;
+Color spPrimaryColor = Colors.pink.shade900;
+Color spPrimaryTextColor = Colors.pink.shade100;
+Color spSecondTextColor = Colors.deepPurpleAccent;
+Color spSecondColor = Colors.redAccent;
+Color spTitleTextColor = Colors.pinkAccent;
+Color spMainColor = Colors.black;
