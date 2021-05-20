@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-
+import 'package:dropdown_search/dropdown_search.dart';
 import 'package:carousel_pro/carousel_pro.dart' show Carousel;
 import 'package:mirraura/components/horizontal_listview.dart';
+import 'package:mirraura/pages/bookmark.dart';
+import 'package:mirraura/pages/profile.dart';
 import 'constant.dart';
 import 'package:mirraura/pages/cart.dart';
 import 'package:mirraura/components/products.dart';
@@ -83,22 +85,11 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () { Navigator.push(context,MaterialPageRoute(builder: (context)=> new ProfilePage()));},
               child: ListTile(
                 title: Text('Profile'),
                 leading: Icon(
                   Icons.person,
-                  color: Colors.orange,
-                ),
-              ),
-            ),
-
-            InkWell(
-              onTap: () {},
-              child: ListTile(
-                title: Text('My Account'),
-                leading: Icon(
-                  Icons.home,
                   color: Colors.orange,
                 ),
               ),
@@ -130,23 +121,16 @@ class _HomePageState extends State<HomePage> {
             ),
 
             InkWell(
-              onTap: () {},
+              onTap: () { Navigator.push(context, MaterialPageRoute(builder: (context)=> new BookmarkPage()));},
               child: ListTile(
-                title: Text('Categories'),
+                title: Text('Bookmark'),
                 leading: Icon(
-                  Icons.dashboard,
-                  color: Colors.orange,
+                 Icons.bookmark,
+                  color: spPrimaryColor,
                 ),
               ),
             ),
 
-            InkWell(
-              onTap: () {},
-              child: ListTile(
-                title: Text('Favourites'),
-                leading: Icon(Icons.favorite, color: Colors.red),
-              ),
-            ),
             Divider(),
             InkWell(
               onTap: () {},
@@ -180,7 +164,20 @@ class _HomePageState extends State<HomePage> {
           imagecarosel,
           //padding widget
 
-          //Horizontal list view begins here
+         Container(
+      padding: const EdgeInsets.all(20),
+      child: DropdownSearch<String>(
+      mode: Mode.MENU,
+      showSelectedItem: true,
+      items:["Women", "Men", "Kids", "Price"],
+      label: "Filter",
+      hint: "sort out in menu mode",
+      //onChanged:(value){
+       // if(value=="Women")
+          // return Navigator.of(context,MaterialPageRouter(buiid: (context)=>;));
+     // },
+      selectedItem: "Women"),
+    ),
 
           new Padding(
             padding: const EdgeInsets.all(23.0),
