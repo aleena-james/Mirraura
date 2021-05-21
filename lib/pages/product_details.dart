@@ -3,23 +3,25 @@ import 'package:mirraura/constant.dart';
 import 'package:mirraura/pages/cart.dart';
 import 'package:mirraura/main.dart';
 
-enum SetSize{s,m,l}
+ enum SetSize{s,m,l}
  enum SetColor{r,b,y}
+
 class PageDetails extends StatefulWidget {
   final productDetailName;
   final productDetailNewPrice;
   final productDetailPrice;
   final productDetailPic;
+ 
   
   PageDetails({this.productDetailName,
   this.productDetailNewPrice, this.productDetailPrice, this.productDetailPic});
-  
+ 
   @override
   _PageDetailsState createState() => _PageDetailsState();
 }
 
 class _PageDetailsState extends State<PageDetails> {
- SetSize? _size = SetSize.s;
+  SetSize? _size = SetSize.s;
   SetColor? _color = SetColor.y;
   int _qty=1;
   String s="S"; String c="Yellow";
@@ -87,10 +89,10 @@ class _PageDetailsState extends State<PageDetails> {
                         title: Text("Size"),
                         content: Text("Choose the size"),
                         actions: [
-                           new Row(
+                          new Row(
                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                         new Radio(
+                        new Radio(
                           value: SetSize.s,
                           groupValue: _size,
                           onChanged: (SetSize? value){ setState(() {
@@ -102,7 +104,7 @@ class _PageDetailsState extends State<PageDetails> {
                           'S',
                           style: new TextStyle(fontSize: 16.0),
                         ),
-                         new Radio(
+                        new Radio(
                           value: SetSize.m,
                           groupValue: _size,
                           onChanged:(SetSize? value) {setState(() {
@@ -110,20 +112,20 @@ class _PageDetailsState extends State<PageDetails> {
                             s="M";
                           });}
                         ),
-                         new Text(
+                          new Text(
                           'M',
                           style: new TextStyle(
                             fontSize: 16.0,
                           ),
                         ),
-                         new Radio(
+                        new Radio(
                            value: SetSize.l,
                           groupValue: _size,
                           onChanged: (SetSize? value){setState(() {
                             _size=value; s="L";
                           });},
                         ),
-                          new Text(
+                        new Text(
                           'L',
                           style: new TextStyle(fontSize: 16.0),
                         ),
@@ -153,21 +155,22 @@ class _PageDetailsState extends State<PageDetails> {
                   onPressed:() {
                     showDialog(context: context,
                     builder: (context){
-                      return new AlertDialog(
-                        title: Text("Color"),
-                        content: Text("Choose a color"),
-                        actions: [
+                    
+                    return new AlertDialog(
+                    title: Text("Color"), 
+                    content: Text("Choose a color"),
+                    actions: [
                            new Row(
                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                         new Radio(
+                          new Radio(
                             value: SetColor.y,
                             groupValue: _color,
                             onChanged: (SetColor? value){ setState(() {
                               _color = value;  c="Yellow";
                             });},
                           ),
-                             new Text(
+                         new Text(
                           'Yellow',
                           style: new TextStyle(fontSize: 16.0),
                         ),
@@ -178,26 +181,27 @@ class _PageDetailsState extends State<PageDetails> {
                               _color= value; c="Red";
                             });}
                           ),
-                            new Text(
+                         new Text(
                           'Red',
                           style: new TextStyle(
                             fontSize: 16.0,
                           ),
                         ),
-                         new Radio(
+                        new Radio(
                             value: SetColor.b,
                             groupValue: _color,
                             onChanged: (SetColor? value){setState(() {
                               _color = value; c="Blue";
                             });},
                           ),
-                             new Text(
+                          new Text(
                           'Blue',
                           style: new TextStyle(fontSize: 16.0),
                         ),
                        
                       ],
                     ),
+                          
                           MaterialButton(
                             onPressed: (){
                               Navigator.of(context).pop(context);
@@ -217,71 +221,72 @@ class _PageDetailsState extends State<PageDetails> {
                 ),
                       ),
 
-                  Expanded(
-                  child: MaterialButton(
-                  onPressed:() {
-                    showDialog(context: context,
-                    builder: (context){
-                      return new AlertDialog(
-                        title: Text("Quantity"),
-                        content: Text("Choose the quantity"),
-                        actions: [
-                          new Row(
-                     mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                          new Radio(
-                          value: 1,
-                          groupValue: _qty,
-                          onChanged: (int? value){ setState(() {
-                            _qty = value!;
-                          });},
-                        ),
-                          new Text(
-                          '1',
-                          style: new TextStyle(fontSize: 16.0),
-                        ),
-                        new Radio(
-                          value: 2,
-                          groupValue: _qty,
-                          onChanged: (int? value){setState(() {
-                            _qty= value!;
-                          });}
-                        ),
-                         new Text(
-                          '2',
-                          style: new TextStyle(
-                            fontSize: 16.0,
-                          ),
-                        ),
-                         new Radio(
-                          value: 3,
-                          groupValue: _qty,
-                          onChanged: (int? value){setState(() {
-                            _qty = value!;
-                          });},
-                        ),
-                         new Text(
-                          '3',
-                          style: new TextStyle(fontSize: 16.0),
-                        ),
-                      ],
-                    ),
-                          MaterialButton(
-                            onPressed: (){
-                              Navigator.of(context).pop(context);
-                            },
-                            child: Text("close",)), 
-                        ],
-                      );
-                    });
-                  },
-                  color: spBackgroundColor,
-                  elevation: 0.2,
-                  textColor: Colors.grey,
-                  child: Row(children: [
-                     Expanded(child: Text("Qty"),),
-                      Expanded(child: Icon(Icons.arrow_drop_down),),
-                  ],),),),
+                 // Expanded(
+                 // child: MaterialButton(
+                //  onPressed:() {
+                 //   showDialog(context: context,
+                 //   builder: (context){
+                 //     return new AlertDialog(
+                   //     title: Text("Quantity"),
+                   //     content: Text("Choose the quantity"),
+                   //     actions: [
+                     //      new Row(
+                    // mainAxisAlignment: MainAxisAlignment.center,
+                    //  children: <Widget>[
+                    //    new Radio(
+                    //      value: 1,
+                      //    groupValue: _qty,
+                      //    onChanged: (int? value){ setState(() {
+                      //      _qty = value!;
+                       //   });},
+                     //   ),
+                     //   new Text(
+                       //   '1',
+                       //   style: new TextStyle(fontSize: 16.0),
+                     //   ),
+                   //     new Radio(
+                     //     value: 2,
+                    //      groupValue: _qty,
+                   //       onChanged: (int? value){setState(() {
+                   //         _qty= value!;
+                  //        });}
+                  //      ),
+                  //      new Text(
+                  //        '2',
+                  //        style: new TextStyle(
+                 //           fontSize: 16.0,
+                 //         ),
+                 //       ),
+                   //     new Radio(
+                   //       value: 3,
+                   //       groupValue: _qty,
+                   //       onChanged: (int? value){setState(() {
+                   //         _qty = value!;
+                   //       });},
+                   //     ),
+                   //     new Text(
+                   //       '3',
+                  //        style: new TextStyle(fontSize: 16.0),
+                  //      ),
+                  //    ],
+                 //   ),
+
+                   //       MaterialButton(
+                   //         onPressed: (){
+                   //           Navigator.of(context).pop(context);
+                   //         },
+                   //         child: Text("close",)), 
+                   //     ],
+                   //   );
+                 //   });
+                //  },
+              //    color: spBackgroundColor,
+             //     elevation: 0.2,
+             //     textColor: Colors.grey,
+            //      child: Row(children: [
+            //         Expanded(child: Text("Qty"),),
+           //           Expanded(child: Icon(Icons.arrow_drop_down),),
+           //       ],),),),
             ],
           ),
            Row(
@@ -300,12 +305,12 @@ class _PageDetailsState extends State<PageDetails> {
                   icon: Icon(Icons.add_shopping_cart),
                   color: Colors.red,
                   onPressed: () {
-                     showDialog(context: context,
+                    showDialog(context: context,
                     builder: (context){
                       return new AlertDialog(
                         content: Text("Added to cart.."),
                         actions: [
-                         MaterialButton(
+                           MaterialButton(
                             onPressed: (){
                               Navigator.of(context).pop(context);
                             },
@@ -319,7 +324,7 @@ class _PageDetailsState extends State<PageDetails> {
                   icon: Icon(Icons.bookmark_border),
                   color: spPrimaryColor,
                   onPressed: () {
-                     showDialog(context: context,
+                      showDialog(context: context,
                     builder: (context){
                       return new AlertDialog(
                         content: Text("Bookmarked"),
@@ -331,9 +336,10 @@ class _PageDetailsState extends State<PageDetails> {
                             child: Text("ok",)),
                         ],
                         );
-                  },
-                 );
-                   } ),
+                      },
+                    );
+                  
+                  }, )
                 ],
                       ),
               Divider(),
@@ -351,7 +357,8 @@ class _PageDetailsState extends State<PageDetails> {
           ],
         ),
 
-        Row(
+
+       Row(
           children: [
             Padding(padding: const EdgeInsets.fromLTRB(12.0,5.0,5.0,5.0),
             child: Text("Size", style: TextStyle(color: Colors.grey,) )),
@@ -360,7 +367,7 @@ class _PageDetailsState extends State<PageDetails> {
           ],
         ),
 
-         Row(
+        Row(
           children: [
             Padding(padding: const EdgeInsets.fromLTRB(12.0,5.0,5.0,5.0),
             child: Text("Color", style: TextStyle(color: Colors.grey,) )),
@@ -369,14 +376,16 @@ class _PageDetailsState extends State<PageDetails> {
           ],
         ),
 
-         Row(
-          children: [
-            Padding(padding: const EdgeInsets.fromLTRB(12.0,5.0,5.0,5.0),
-            child: Text("Quantity", style: TextStyle(color: Colors.grey,) )),
-            Padding(padding: const EdgeInsets.all(5.0),
-            child: Text("$_qty",),),
-          ],
-        ),
+
+       // Row(
+       //   children: [
+       //     Padding(padding: const EdgeInsets.fromLTRB(12.0,5.0,5.0,5.0),
+       //     child: Text("Quantity", style: TextStyle(color: Colors.grey,) )),
+       //     Padding(padding: const EdgeInsets.all(5.0),
+     //       child: Text("$_qty",),),
+     //     ],
+    //    ),
+
 //to be completed...
          Row(
           children: [
