@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mirraura/constant.dart';
 import 'package:mirraura/pages/cart.dart';
-import 'package:mirraura/main.dart';
+import 'package:mirraura/pages/home.dart';
 
  enum SetSize{s,m,l}
  enum SetColor{r,b,y}

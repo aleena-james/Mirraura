@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "954593495531",
+    "project_id": "mirraura",
+    "storage_bucket": "mirraura.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954593495531:android:6e4343d6c89b85a860f1ae",
+        "android_client_info": {
+          "package_name": "com.example.mirraura"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954593495531-2b5ehk8u1j6t3ooqloh5ftfj6b00tbdn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mirraura",
+            "certificate_hash": "f5ec332f6e1ee9de77a33361fb36e932d11f7e73"
+          }
+        },
+        {
+          "client_id": "954593495531-ihk59pd3nvdgi5n7gek1irqq4n8frgpq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9BHpDsQrKYxyOQ-Vo9_83dnQ8fN3HQMc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954593495531-ihk59pd3nvdgi5n7gek1irqq4n8frgpq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
