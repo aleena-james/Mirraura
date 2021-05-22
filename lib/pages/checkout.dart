@@ -1,26 +1,26 @@
-//import 'package:flutter/material.dart';
-//import 'package:mirraura/components/cart_products.dart';
+import 'package:flutter/material.dart';
 
-//class PaymentPage extends StatefulWidget {
- // @override
- // _PaymentPageState createState() => _PaymentPageState();
-//}
+class CheckoutView extends StatefulWidget {
+  //EmailProvider emailProvider;
+  CheckoutView();
+  // CheckoutView(this.emailProvider);
+  @override
+  _CheckoutViewState createState() => _CheckoutViewState();
+}
 
-//class _PaymentPageState extends State<PaymentPage> {
- // @override
- // Widget build(BuildContext context) {
-   // return Scaffold(
-     // appBar: AppBar(
-      //  title: Text("Checkout"),
-    //  ),
-     // body: Column(
-     //   children: [
-     //     new Cart_products(),
-     //     Container(),
-       // ],
-     // ),
-
-      
-  //  );
- // }
-//}
+class _CheckoutViewState extends State<CheckoutView> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Checkout"),
+      ),
+      body: Column(
+        children: [
+          //  new Cart_products(),
+          Container(),
+        ],
+      ),
+    );
+  }
+}
