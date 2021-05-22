@@ -8,36 +8,34 @@ import 'home.dart';
 import 'signup.dart';
 import 'package:mirraura/constant.dart';
 import 'welcome.dart';
+
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
 }
 
 class _LoginState extends State<Login> {
- final _auth = FirebaseAuth.instance;
+  final _auth = FirebaseAuth.instance;
   bool showProgress = false;
   late String email, password;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: new AppBar(
+      appBar: new AppBar(
         backgroundColor: Colors.white,
-       
         actions: <Widget>[
           new IconButton(
             icon: Icon(
               Icons.arrow_forward_ios,
-              color:spPrimaryColor,
-              
+              color: spPrimaryColor,
             ),
             onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => new Welcome()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => new Welcome()));
             },
           ),
-          
         ],
-      ),      
+      ),
       body: Center(
         child: ModalProgressHUD(
           inAsyncCall: showProgress,
@@ -46,7 +44,10 @@ class _LoginState extends State<Login> {
             children: <Widget>[
               Text(
                 "Welcome Back",
-                style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20.0,fontFamily: 'Julius Sans One'),
+                style: TextStyle(
+                    fontWeight: FontWeight.w800,
+                    fontSize: 20.0,
+                    fontFamily: 'Julius Sans One'),
               ),
               SizedBox(
                 height: 20.0,
@@ -95,15 +96,14 @@ class _LoginState extends State<Login> {
                       if (newUser != null) {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => HomePage()),
+                          MaterialPageRoute(builder: (context) => HomePage()),
                         );
                         Fluttertoast.showToast(
                             msg: "Login Successfull",
                             toastLength: Toast.LENGTH_SHORT,
                             gravity: ToastGravity.CENTER,
                             timeInSecForIosWeb: 1,
-                            backgroundColor:spPrimaryColor ,
+                            backgroundColor: spPrimaryColor,
                             textColor: Colors.white,
                             fontSize: 16.0);
                         setState(() {
@@ -112,20 +112,17 @@ class _LoginState extends State<Login> {
                       }
                     } catch (e) {
                       String m = e.toString();
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => Login()));
-                      
-                      Fluttertoast.showToast(
-                            msg: m,
-                            toastLength: Toast.LENGTH_SHORT,
-                            gravity: ToastGravity.CENTER,
-                            timeInSecForIosWeb: 3,
-                            backgroundColor:spPrimaryColor ,
-                            textColor: Colors.white,
-                            fontSize: 16.0);
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Login()));
 
+                      Fluttertoast.showToast(
+                          msg: m,
+                          toastLength: Toast.LENGTH_SHORT,
+                          gravity: ToastGravity.CENTER,
+                          timeInSecForIosWeb: 3,
+                          backgroundColor: spPrimaryColor,
+                          textColor: Colors.white,
+                          fontSize: 16.0);
                     }
                   },
                   minWidth: 200.0,
