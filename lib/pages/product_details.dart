@@ -1,10 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mirraura/constant.dart';
 import 'package:mirraura/pages/cart.dart';
+import 'package:mirraura/pages/filter.dart';
 import 'package:mirraura/pages/home.dart';
 
  enum SetSize{s,m,l}
  enum SetColor{r,b,y}
+
 
 class PageDetails extends StatefulWidget {
   final productDetailName;
@@ -16,6 +19,7 @@ class PageDetails extends StatefulWidget {
   PageDetails({this.productDetailName,
   this.productDetailNewPrice, this.productDetailPrice, this.productDetailPic});
  
+ 
   @override
   _PageDetailsState createState() => _PageDetailsState();
 }
@@ -23,7 +27,7 @@ class PageDetails extends StatefulWidget {
 class _PageDetailsState extends State<PageDetails> {
   SetSize? _size = SetSize.s;
   SetColor? _color = SetColor.y;
-  int _qty=1;
+  
   String s="S"; String c="Yellow";
    bool fill=false;
   @override
@@ -327,7 +331,7 @@ class _PageDetailsState extends State<PageDetails> {
                       showDialog(context: context,
                     builder: (context){
                       return new AlertDialog(
-                        content: Text("Bookmarked"),
+                        content: Text("Item bookmarked..."),
                         actions: [
                            MaterialButton(
                               onPressed: (){
@@ -404,6 +408,15 @@ class _PageDetailsState extends State<PageDetails> {
              Padding(padding: const EdgeInsets.all(5.0),
             child: Text("Brand new!!",),),
           ],
+        ),
+          Container(
+          padding: const EdgeInsets.all(8.0),
+          child: MaterialButton(
+            child: new Text("Filter here..", style: TextStyle(color: Colors.white),),
+            color: spPrimaryColor,
+            onPressed: (){
+              Navigator.push(context,MaterialPageRoute(builder: (context)=> new FilterPage()));
+            },),
         ),
         ],
       ),
