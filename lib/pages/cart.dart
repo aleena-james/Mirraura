@@ -15,18 +15,13 @@ class _CartState extends State<Cart> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        backgroundColor: spPrimaryColor,
-        title: Text("My Cart"),
-        actions: <Widget>[
-          new IconButton(
-            icon: Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
-            onPressed: () {},
-          )
-        ],
+       iconTheme: IconThemeData(color:spPrimaryColor),
+        backgroundColor: Colors.white,
+        shadowColor: null,
+        title: Text('My Cart', style: TextStyle(color: spPrimaryColor), ),
+        
       ),
+
       body: new Cart_products(),
       bottomNavigationBar: new Container(
           color: Colors.white,

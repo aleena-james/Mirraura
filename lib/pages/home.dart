@@ -4,21 +4,22 @@ import 'package:mirraura/components/horizontal_listview.dart';
 import 'package:mirraura/constant.dart';
 import 'package:mirraura/pages/cart.dart';
 import 'package:mirraura/components/products.dart';
-
-import 'package:dropdown_search/dropdown_search.dart';
-
-
 import 'package:mirraura/pages/bookmark.dart';
 import 'package:mirraura/pages/profile.dart';
 
 
 
 class HomePage extends StatefulWidget {
+  late String curemail;
+  HomePage(this.curemail);
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomePageState createState() => _HomePageState(curemail);
 }
 
 class _HomePageState extends State<HomePage> {
+  late String curemail;
+  _HomePageState(this.curemail);
+  TextEditingController _searchController =  TextEditingController();
   @override
   Widget build(BuildContext context) {
     Widget imagecarosel = new Container(
@@ -40,26 +41,37 @@ class _HomePageState extends State<HomePage> {
     );
     return Scaffold(
       appBar: new AppBar(
-        backgroundColor: spPrimaryColor,
-        title: Text("Mirraura"),
+        iconTheme: IconThemeData(color:spPrimaryColor),
+        backgroundColor: Colors.white,
+        shadowColor: Colors.white,
+        title: Material(
+          borderRadius: BorderRadius.circular(10.0),
+          color: Colors.grey[100],
+          elevation: 0.0,
+          child: TextFormField(
+            //controller: _searchController,
+            decoration: InputDecoration(
+              icon: Icon(Icons.search),
+               // contentPadding: const EdgeInsets.all(10.0),
+               // hintText: "Search...",
+                border: InputBorder.none),
+           
+          ),
+         
+        ),
         actions: <Widget>[
+         
           new IconButton(
             icon: Icon(
               Icons.shopping_cart,
-              color: Colors.white,
+              color: spPrimaryColor,
             ),
             onPressed: () {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => new Cart()));
             },
           ),
-          new IconButton(
-            icon: Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
-            onPressed: () {},
-          )
+          
         ],
       ),
       drawer: new Drawer(
@@ -67,8 +79,8 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             //header
             UserAccountsDrawerHeader(
-              accountName: Text('Lekha'),
-              accountEmail: Text('lekha123@gmail.com'),
+              accountName: Text(''),
+              accountEmail: Text(curemail),
               currentAccountPicture: GestureDetector(
                 child: CircleAvatar(
                   backgroundColor: Colors.grey,
@@ -83,12 +95,12 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             InkWell(
-              onTap: () { Navigator.push(context,MaterialPageRoute(builder: (context)=> new ProfilePage()));},
+              onTap: () { Navigator.push(context,MaterialPageRoute(builder: (context)=> new ProfilePage(curemail)));},
               child: ListTile(
                 title: Text('Profile'),
                 leading: Icon(
                   Icons.person,
-                  color: Colors.orange,
+                  color: spPrimaryColor,
                 ),
               ),
             ),
@@ -99,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                 title: Text('My Orders'),
                 leading: Icon(
                   Icons.shopping_bag,
-                  color: Colors.orange,
+                  color: spPrimaryColor,
                 ),
               ),
             ),
@@ -113,7 +125,7 @@ class _HomePageState extends State<HomePage> {
                 title: Text('My Cart'),
                 leading: Icon(
                   Icons.shopping_cart,
-                  color: Colors.orange,
+                  color: spPrimaryColor,
                 ),
               ),
             ),
@@ -159,23 +171,23 @@ class _HomePageState extends State<HomePage> {
           ),
           HorizontalList(),
 
-          //imagecarosel,
+          imagecarosel,
           //padding widget
 
-         Container(
-      padding: const EdgeInsets.all(4.0),
-      child: DropdownSearch<String>(
-      mode: Mode.MENU,
-      showSelectedItem: true,
-      items:["Women", "Men", "Kids", "Price"],
-      label: "Filter",
-      hint: "sort out in menu mode",
+      //    Container(
+      // padding: const EdgeInsets.all(4.0),
+      // child: DropdownSearch<String>(
+      // mode: Mode.MENU,
+      // showSelectedItem: true,
+      // items:["Women", "Men", "Kids", "Price"],
+      // label: "Filter",
+      // hint: "sort out in menu mode",
       //onChanged:(value){
        // if(value=="Women")
           // return Navigator.of(context,MaterialPageRouter(buiid: (context)=>;));
      // },
-      selectedItem: "Women"),
-    ),
+    //   selectedItem: "Women"),
+    // ),
 
           new Padding(
             padding: const EdgeInsets.all(23.0),

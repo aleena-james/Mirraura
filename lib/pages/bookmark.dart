@@ -17,8 +17,9 @@ class _BookmarkPageState extends State<BookmarkPage> {
   Widget build(BuildContext context) {
     return Scaffold(
            appBar: new AppBar(
-        backgroundColor: spPrimaryColor,
-        title: Text("Bookmarked Items"),
+        iconTheme: IconThemeData(color:spPrimaryColor),
+        backgroundColor: Colors.white,
+        title: Text("Bookmarked Items",style:TextStyle(color:spPrimaryColor, ),),
          actions: <Widget>[
          
           new IconButton(

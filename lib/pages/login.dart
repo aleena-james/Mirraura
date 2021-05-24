@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mirraura/pages/welcome.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'home.dart';
 import 'signup.dart';
 import 'package:mirraura/constant.dart';
-import 'welcome.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -18,24 +15,22 @@ class _LoginState extends State<Login> {
   final _auth = FirebaseAuth.instance;
   bool showProgress = false;
   late String email, password;
+  Future<String> logIn() async{
+    String user= (await _auth.signInWithEmailAndPassword(email: email.trim(), password: password).toString());
+    return user;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
         backgroundColor: Colors.white,
-        actions: <Widget>[
-          new IconButton(
-            icon: Icon(
-              Icons.arrow_forward_ios,
-              color: spPrimaryColor,
-            ),
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => new Welcome()));
-            },
+        iconTheme: IconThemeData(color:spPrimaryColor),
+        
+        
+            
           ),
-        ],
-      ),
+        
+      
       body: Center(
         child: ModalProgressHUD(
           inAsyncCall: showProgress,
@@ -58,6 +53,7 @@ class _LoginState extends State<Login> {
                 onChanged: (value) {
                   email = value; // get value from TextField
                 },
+                
                 decoration: InputDecoration(
                     hintText: "Enter your Email",
                     border: OutlineInputBorder(
@@ -96,7 +92,7 @@ class _LoginState extends State<Login> {
                       if (newUser != null) {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => HomePage()),
+                          MaterialPageRoute(builder: (context) => HomePage(email)),
                         );
                         Fluttertoast.showToast(
                             msg: "Login Successfull",
@@ -111,18 +107,19 @@ class _LoginState extends State<Login> {
                         });
                       }
                     } catch (e) {
-                      String m = e.toString();
+                     
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Login()));
 
                       Fluttertoast.showToast(
-                          msg: m,
+                          msg: "Make sure this email and password is correct",
                           toastLength: Toast.LENGTH_SHORT,
                           gravity: ToastGravity.CENTER,
                           timeInSecForIosWeb: 3,
                           backgroundColor: spPrimaryColor,
                           textColor: Colors.white,
-                          fontSize: 16.0);
+                          fontSize: 16.0,
+                          );
                     }
                   },
                   minWidth: 200.0,
@@ -130,8 +127,24 @@ class _LoginState extends State<Login> {
                   child: Text(
                     "Login",
                     style:
-                        TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0),
+                         TextStyle(fontWeight: FontWeight.w600, fontSize: 25.0,fontFamily: 'Julius Sans One'),
                   ),
+                ),
+              ),
+               SizedBox(
+                height: 15.0,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Signup()),
+                  );
+                },
+                child: Text(
+                  "Don't have an account? Sign up Now",
+                  style: TextStyle(
+                      color: spPrimaryColor, fontWeight: FontWeight.w900, fontFamily: 'Julius Sans One'),
                 ),
               )
             ],

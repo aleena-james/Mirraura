@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mirraura/pages/home.dart';
 import 'package:mirraura/pages/login.dart';
 import 'package:mirraura/pages/signup.dart';
-
 import '../constant.dart';
 
 class Welcome extends StatefulWidget {
@@ -41,16 +39,7 @@ class _WelcomeState extends State<Welcome> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 10.0),
-              Text(
-                'Find your Reflection',
-                style: TextStyle(
-                  color: Colors.black54,
-                  fontSize: 30.0,
-                  letterSpacing: 2,
-                  fontFamily: 'Julius Sans One',
-                ),
-              ),
+              
               SizedBox(height: 30.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -105,6 +94,16 @@ class _WelcomeState extends State<Welcome> {
               //   text: "Sign up with Google",
               //   onPressed: () {},
               // )
+            SizedBox(height: 80.0),
+              Text(
+                'Find your Reflection',
+                style: TextStyle(
+                  color: Colors.black54,
+                  fontSize: 30.0,
+                  letterSpacing: 2,
+                  fontFamily: 'Julius Sans One',
+                ),
+              ),
             ],
           ),
         ));

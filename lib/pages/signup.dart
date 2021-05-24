@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '../constant.dart';
-import 'home.dart';
 import 'package:mirraura/pages/login.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'welcome.dart';
 
 class Signup extends StatefulWidget {
   @override
@@ -22,22 +19,10 @@ class _SignupState extends State<Signup> {
     return Scaffold(
        appBar: new AppBar(
          backgroundColor: Colors.white,
+         iconTheme: IconThemeData(color:spPrimaryColor),
         
        
-        actions: <Widget>[
-          
-          new IconButton(
-            icon: Icon(
-              Icons.arrow_forward_ios,
-              color:spPrimaryColor,
-            ),
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => new Welcome()));
-            },
-          ),
-          
-        ],
+       
       ),
       
       body: Center(
@@ -76,6 +61,7 @@ class _SignupState extends State<Signup> {
                 },
                 decoration: InputDecoration(
                     hintText: "Enter your Password",
+                    
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(32.0)))),
               ),
@@ -106,14 +92,14 @@ class _SignupState extends State<Signup> {
                         });
                       }
                     } catch (e) {
-                      String m = e.toString();
+                      
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => Signup()));
                       
                       Fluttertoast.showToast(
-                            msg: m,
+                            msg: "Make sure the format of email and password is correct and this account doesn't already exists",
                             toastLength: Toast.LENGTH_SHORT,
                             gravity: ToastGravity.CENTER,
                             timeInSecForIosWeb: 3,
@@ -127,7 +113,7 @@ class _SignupState extends State<Signup> {
                   child: Text(
                     "Sign Up",
                     style:
-                        TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0),
+                        TextStyle(fontWeight: FontWeight.w600, fontSize: 25.0,fontFamily: 'Julius Sans One'),
                   ),
                 ),
               ),
@@ -144,7 +130,7 @@ class _SignupState extends State<Signup> {
                 child: Text(
                   "Already Registred? Login Now",
                   style: TextStyle(
-                      color: spPrimaryColor, fontWeight: FontWeight.w900),
+                      color: spPrimaryColor, fontWeight: FontWeight.w900, fontFamily: 'Julius Sans One'),
                 ),
               )
             ],
