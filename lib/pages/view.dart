@@ -34,7 +34,7 @@ class _ViewState extends State<View> {
     var options = {
       "key": "rzp_test_swTwpowVK9wzFJ",
       //OLtBt2n9PUpWCQecdm1Hjx4y
-      "amount": num.parse(textEditingController.text) * 100,
+      "amount": 2200 * 100,
       "name": "MIRRAURA",
       "description": "Reflect your Value",
       //"email": num.parse(textEditingController.text) * 100,
@@ -80,7 +80,7 @@ class _ViewState extends State<View> {
           children: [
             TextField(
               controller: textEditingController,
-              decoration: InputDecoration(hintText: "amount to pay"),
+              decoration: InputDecoration(hintText: "PRESS PAY NOW"),
             ),
             SizedBox(
               height: 12,
