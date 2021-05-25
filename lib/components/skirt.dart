@@ -10,7 +10,11 @@ class Skirt extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: spPrimaryColor,
-        title: Text("  Category:"),
+        title: Text(
+          "Category",
+          style: TextStyle(
+              fontFamily: 'Julius Sans One', fontWeight: FontWeight.bold),
+        ),
         actions: <Widget>[
           new IconButton(
             icon: Icon(
@@ -24,14 +28,29 @@ class Skirt extends StatelessWidget {
           ),
         ],
       ),
-       body: ListView(children: [
-            HorizontalList(),
-           Padding(padding: const EdgeInsets.only(top:8.0, left: 20.0,)),
-            Text('Skirts',style: TextStyle(fontSize: 50,),),
-            SizedBox(
-              height: 500,
-              child:_Skirt(),),
-        ],),
+      body: ListView(
+        children: [
+          HorizontalList(),
+          Padding(
+              padding: const EdgeInsets.only(
+            top: 8.0,
+            left: 20.0,
+          )),
+          Text(
+            'Skirts',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 30.0,
+              letterSpacing: 2,
+              fontFamily: 'Julius Sans One',
+            ),
+          ),
+          SizedBox(
+            height: 500,
+            child: _Skirt(),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -66,17 +85,16 @@ class _Skirt extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-          itemCount: product_list.length,
-          gridDelegate:
-              new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-          itemBuilder: (BuildContext context, int index) {
-            return Single_prod(
-               prod_name: product_list[index]['name'],
-              prod_picture: product_list[index]['picture'],
-              prod_old_price: product_list[index]['old_price'],
-              prod_price: product_list[index]['price'],
-            );
-          }
-    );
+        itemCount: product_list.length,
+        gridDelegate:
+            new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        itemBuilder: (BuildContext context, int index) {
+          return Single_prod(
+            prod_name: product_list[index]['name'],
+            prod_picture: product_list[index]['picture'],
+            prod_old_price: product_list[index]['old_price'],
+            prod_price: product_list[index]['price'],
+          );
+        });
   }
 }
