@@ -43,7 +43,10 @@ firebase_database:       ^6.1.2
 flutter_colorpicker:     ^0.4.0
 flutter_cart:           ^0.0.5+1
 
-## How to configure
-Instructions for setting up project
-## How to Run
-Instructions for running
+## Installation 
+To make ths project works, you need to have flutter SDK installed. [**Install Flutter**](https://flutter.dev/docs/get-started/install)
+1. Clone locally the repository
+2. Go to app directory and run `flutter pub get` 
+3. And then run `flutter run` 
+4. Now you can bring your desired change to app.  
+5. Feel Free to contribute and make PRs.
