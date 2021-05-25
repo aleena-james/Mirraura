@@ -13,6 +13,7 @@ class Signup extends StatefulWidget {
 class _SignupState extends State<Signup> {
  final _auth = FirebaseAuth.instance;
   bool showProgress = false;
+
   late String email, password;
   @override
   Widget build(BuildContext context) {

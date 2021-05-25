@@ -4,13 +4,11 @@ import 'package:mirraura/pages/filter.dart';
  
  enum SetSize{s,m,l}
  enum SetColor{r,b,y}
-
 class PageDetails extends StatefulWidget {
   final productDetailName;
   final productDetailNewPrice;
   final productDetailPrice;
   final productDetailPic;
- 
   
   PageDetails({this.productDetailName,
   this.productDetailNewPrice, this.productDetailPrice, this.productDetailPic});
@@ -22,7 +20,7 @@ class PageDetails extends StatefulWidget {
 class _PageDetailsState extends State<PageDetails> {
   SetSize? _size = SetSize.s;
   SetColor? _color = SetColor.y;
-  int _qty=1;
+  
   String s="S"; String c="Yellow";
    bool fill=false;
   @override
@@ -238,73 +236,6 @@ class _PageDetailsState extends State<PageDetails> {
                   ),
                 ),
                       ),
-
-                 // Expanded(
-                 // child: MaterialButton(
-                //  onPressed:() {
-                 //   showDialog(context: context,
-                 //   builder: (context){
-                 //     return new AlertDialog(
-                   //     title: Text("Quantity"),
-                   //     content: Text("Choose the quantity"),
-                   //     actions: [
-                     //      new Row(
-                    // mainAxisAlignment: MainAxisAlignment.center,
-                    //  children: <Widget>[
-                    //    new Radio(
-                    //      value: 1,
-                      //    groupValue: _qty,
-                      //    onChanged: (int? value){ setState(() {
-                      //      _qty = value!;
-                       //   });},
-                     //   ),
-                     //   new Text(
-                       //   '1',
-                       //   style: new TextStyle(fontSize: 16.0),
-                     //   ),
-                   //     new Radio(
-                     //     value: 2,
-                    //      groupValue: _qty,
-                   //       onChanged: (int? value){setState(() {
-                   //         _qty= value!;
-                  //        });}
-                  //      ),
-                  //      new Text(
-                  //        '2',
-                  //        style: new TextStyle(
-                 //           fontSize: 16.0,
-                 //         ),
-                 //       ),
-                   //     new Radio(
-                   //       value: 3,
-                   //       groupValue: _qty,
-                   //       onChanged: (int? value){setState(() {
-                   //         _qty = value!;
-                   //       });},
-                   //     ),
-                   //     new Text(
-                   //       '3',
-                  //        style: new TextStyle(fontSize: 16.0),
-                  //      ),
-                  //    ],
-                 //   ),
-
-                   //       MaterialButton(
-                   //         onPressed: (){
-                   //           Navigator.of(context).pop(context);
-                   //         },
-                   //         child: Text("close",)), 
-                   //     ],
-                   //   );
-                 //   });
-                //  },
-              //    color: spBackgroundColor,
-             //     elevation: 0.2,
-             //     textColor: Colors.grey,
-            //      child: Row(children: [
-            //         Expanded(child: Text("Qty"),),
-           //           Expanded(child: Icon(Icons.arrow_drop_down),),
-           //       ],),),),
             ],
           ),
          
@@ -335,18 +266,25 @@ class _PageDetailsState extends State<PageDetails> {
                                       },
                                       child: Text("ok",)),
                                   ],
-                                  );
+                                  ); 
                                 },
                               );
                             }, ),
+                             
                           IconButton(
-                            icon: Icon(Icons.bookmark_border),
+                            icon: GestureDetector(
+                                child: (fill)? Icon(Icons.bookmark,color: spPrimaryColor,): Icon(Icons.bookmark_border,color:spPrimaryColor),
+                              ),
                             color: spPrimaryColor,
                             onPressed: () {
+                              setState(() {
+                                fill = !fill;
+                              });
+                              if(fill){
                                 showDialog(context: context,
                               builder: (context){
                                 return new AlertDialog(
-                                  content: Text("Bookmarked"),
+                                  content: Text("Bookmarked.."),
                                   actions: [
                                      MaterialButton(
                                         onPressed: (){
@@ -356,7 +294,22 @@ class _PageDetailsState extends State<PageDetails> {
                                   ],
                                   );
                                 },
+                              );}
+                              else{showDialog(context: context,
+                              builder: (context){
+                                return new AlertDialog(
+                                  content: Text("Bookmark removed.."),
+                                  actions: [
+                                     MaterialButton(
+                                        onPressed: (){
+                                        Navigator.of(context).pop(context);
+                                      },
+                                       child: Text("ok",)),
+                                  ],
+                                  );
+                                },
                               );
+                              }
                             
                             }, )
                           ],
