@@ -11,21 +11,17 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
- final _auth = FirebaseAuth.instance;
+  final _auth = FirebaseAuth.instance;
   bool showProgress = false;
 
   late String email, password;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: new AppBar(
-         backgroundColor: Colors.white,
-         iconTheme: IconThemeData(color:spPrimaryColor),
-        
-       
-       
+      appBar: new AppBar(
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: spPrimaryColor),
       ),
-      
       body: Center(
         child: ModalProgressHUD(
           inAsyncCall: showProgress,
@@ -34,7 +30,9 @@ class _SignupState extends State<Signup> {
             children: <Widget>[
               Text(
                 "New User",
-                style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20.0,
+                style: TextStyle(
+                    fontWeight: FontWeight.w800,
+                    fontSize: 20.0,
                     fontFamily: 'Julius Sans One'),
               ),
               SizedBox(
@@ -44,7 +42,7 @@ class _SignupState extends State<Signup> {
                 keyboardType: TextInputType.emailAddress,
                 textAlign: TextAlign.center,
                 onChanged: (value) {
-                  email = value; //get the value entered by user.
+                  email = value;
                 },
                 decoration: InputDecoration(
                     hintText: "Enter your Email",
@@ -58,11 +56,10 @@ class _SignupState extends State<Signup> {
                 obscureText: true,
                 textAlign: TextAlign.center,
                 onChanged: (value) {
-                  password = value; //get the value entered by user.
+                  password = value;
                 },
                 decoration: InputDecoration(
                     hintText: "Enter your Password",
-                    
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(32.0)))),
               ),
@@ -85,36 +82,35 @@ class _SignupState extends State<Signup> {
                       if (newuser != null) {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => Login()),
+                          MaterialPageRoute(builder: (context) => Login()),
                         );
                         setState(() {
                           showProgress = false;
                         });
                       }
                     } catch (e) {
-                      
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => Signup()));
-                      
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Signup()));
+
                       Fluttertoast.showToast(
-                            msg: "Make sure the format of email and password is correct and this account doesn't already exists",
-                            toastLength: Toast.LENGTH_SHORT,
-                            gravity: ToastGravity.CENTER,
-                            timeInSecForIosWeb: 3,
-                            backgroundColor:spPrimaryColor ,
-                            textColor: Colors.white,
-                            fontSize: 16.0);
+                          msg:
+                              "Make sure the format of email and password is correct and this account doesn't already exists",
+                          toastLength: Toast.LENGTH_SHORT,
+                          gravity: ToastGravity.CENTER,
+                          timeInSecForIosWeb: 3,
+                          backgroundColor: spPrimaryColor,
+                          textColor: Colors.white,
+                          fontSize: 16.0);
                     }
                   },
                   minWidth: 200.0,
                   height: 45.0,
                   child: Text(
                     "Sign Up",
-                    style:
-                        TextStyle(fontWeight: FontWeight.w600, fontSize: 25.0,fontFamily: 'Julius Sans One'),
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 25.0,
+                        fontFamily: 'Julius Sans One'),
                   ),
                 ),
               ),
@@ -131,7 +127,9 @@ class _SignupState extends State<Signup> {
                 child: Text(
                   "Already Registred? Login Now",
                   style: TextStyle(
-                      color: spPrimaryColor, fontWeight: FontWeight.w900, fontFamily: 'Julius Sans One'),
+                      color: spPrimaryColor,
+                      fontWeight: FontWeight.w900,
+                      fontFamily: 'Julius Sans One'),
                 ),
               )
             ],

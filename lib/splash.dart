@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mirraura/pages/home.dart';
 import 'package:mirraura/pages/welcome.dart';
 
-
 class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();
@@ -12,12 +11,11 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     var d = Duration(seconds: 7);
-    // delayed 3 seconds to next page
+
     Future.delayed(d, () {
-      // to next page and close this page
       Navigator.pushAndRemoveUntil(
         context,
- MaterialPageRoute(
+        MaterialPageRoute(
           builder: (context) {
             return Welcome();
           },
@@ -32,25 +30,27 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Center(
+      body: Center(
         child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("images/background2.jpg"),
-                  fit: BoxFit.cover,
-                ),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("images/background2.jpg"),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Center(
+            child: Text(
+              'MIRRAURA',
+              style: TextStyle(
+                color: Colors.black,
+                fontFamily: 'Fredericka the Great',
+                fontSize: 60.0,
+                letterSpacing: 2.5,
+                fontWeight: FontWeight.bold,
               ),
-              child: Center(child: Text(
-                'MIRRAURA',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontFamily: 'Fredericka the Great',
-                  fontSize: 60.0,
-                  letterSpacing: 2.5,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),),
-    ),
+            ),
+          ),
+        ),
       ),
     );
   }

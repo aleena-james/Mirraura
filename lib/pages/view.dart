@@ -5,9 +5,6 @@ import 'package:toast/toast.dart';
 import '../constant.dart';
 
 class View extends StatefulWidget {
-  //EmailProvider emailProvider;
-
-  // CheckoutView(this.emailProvider);
   @override
   _ViewState createState() => _ViewState();
 }
@@ -33,12 +30,9 @@ class _ViewState extends State<View> {
   void opencheckout() {
     var options = {
       "key": "rzp_test_swTwpowVK9wzFJ",
-      //OLtBt2n9PUpWCQecdm1Hjx4y
       "amount": 2200 * 100,
       "name": "MIRRAURA",
       "description": "Reflect your Value",
-      //"email": num.parse(textEditingController.text) * 100,
-      //"number": num.parse(textEditingController.text) * 100,
       "prefill": {"contact": "2323232323", "email": "shdjsdh@gmail.com"},
       "external": {
         "wallets": ["paytm"]
@@ -85,10 +79,6 @@ class _ViewState extends State<View> {
             SizedBox(
               height: 12,
             ),
-            //TextField(
-            //controller: textEditingController,
-            //decoration: InputDecoration(hintText: "phone number"),
-            //),
             RaisedButton(
               color: Colors.pinkAccent,
               child: Text(

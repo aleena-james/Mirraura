@@ -15,22 +15,20 @@ class _LoginState extends State<Login> {
   final _auth = FirebaseAuth.instance;
   bool showProgress = false;
   late String email, password;
-  Future<String> logIn() async{
-    String user= (await _auth.signInWithEmailAndPassword(email: email.trim(), password: password).toString());
+  Future<String> logIn() async {
+    String user = (await _auth
+        .signInWithEmailAndPassword(email: email.trim(), password: password)
+        .toString());
     return user;
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
         backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color:spPrimaryColor),
-        
-        
-            
-          ),
-        
-      
+        iconTheme: IconThemeData(color: spPrimaryColor),
+      ),
       body: Center(
         child: ModalProgressHUD(
           inAsyncCall: showProgress,
@@ -51,9 +49,8 @@ class _LoginState extends State<Login> {
                 keyboardType: TextInputType.emailAddress,
                 textAlign: TextAlign.center,
                 onChanged: (value) {
-                  email = value; // get value from TextField
+                  email = value;
                 },
-                
                 decoration: InputDecoration(
                     hintText: "Enter your Email",
                     border: OutlineInputBorder(
@@ -66,7 +63,7 @@ class _LoginState extends State<Login> {
                 obscureText: true,
                 textAlign: TextAlign.center,
                 onChanged: (value) {
-                  password = value; //get value from textField
+                  password = value;
                 },
                 decoration: InputDecoration(
                     hintText: "Enter your Password",
@@ -92,7 +89,8 @@ class _LoginState extends State<Login> {
                       if (newUser != null) {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => HomePage(email)),
+                          MaterialPageRoute(
+                              builder: (context) => HomePage(email)),
                         );
                         Fluttertoast.showToast(
                             msg: "Login Successfull",
@@ -107,31 +105,32 @@ class _LoginState extends State<Login> {
                         });
                       }
                     } catch (e) {
-                     
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Login()));
 
                       Fluttertoast.showToast(
-                          msg: "Make sure this email and password is correct",
-                          toastLength: Toast.LENGTH_SHORT,
-                          gravity: ToastGravity.CENTER,
-                          timeInSecForIosWeb: 3,
-                          backgroundColor: spPrimaryColor,
-                          textColor: Colors.white,
-                          fontSize: 16.0,
-                          );
+                        msg: "Make sure this email and password is correct",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.CENTER,
+                        timeInSecForIosWeb: 3,
+                        backgroundColor: spPrimaryColor,
+                        textColor: Colors.white,
+                        fontSize: 16.0,
+                      );
                     }
                   },
                   minWidth: 200.0,
                   height: 45.0,
                   child: Text(
                     "Login",
-                    style:
-                         TextStyle(fontWeight: FontWeight.w600, fontSize: 25.0,fontFamily: 'Julius Sans One'),
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 25.0,
+                        fontFamily: 'Julius Sans One'),
                   ),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 15.0,
               ),
               GestureDetector(
@@ -144,7 +143,9 @@ class _LoginState extends State<Login> {
                 child: Text(
                   "Don't have an account? Sign up Now",
                   style: TextStyle(
-                      color: spPrimaryColor, fontWeight: FontWeight.w900, fontFamily: 'Julius Sans One'),
+                      color: spPrimaryColor,
+                      fontWeight: FontWeight.w900,
+                      fontFamily: 'Julius Sans One'),
                 ),
               )
             ],

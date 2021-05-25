@@ -6,7 +6,6 @@ class Cart_products extends StatefulWidget {
 }
 
 class _Cart_productsState extends State<Cart_products> {
- 
   var Product_on_the_cart = [
     {
       "name": "Blazer",
@@ -133,14 +132,6 @@ class _Singlr_cart_productState extends State<Singlr_cart_product> {
           ],
         ),
       ),
-
-      // trailing: new Column(
-      //   children: <Widget>[
-      //    new IconButton(icon: Icon(Icons.arrow_drop_up), onPressed: () {}),
-      //   new Text("$cart_prod_qty"),
-      //  new IconButton(icon: Icon(Icons.arrow_drop_down), onPressed: () {})
-      //  ],
-      //  ),
     );
   }
 }

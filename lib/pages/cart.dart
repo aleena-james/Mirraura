@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mirraura/constant.dart';
 import 'package:mirraura/components/cart_products.dart';
 import 'package:mirraura/pages/view.dart';
-
 import 'checkout.dart';
 
 class Cart extends StatefulWidget {
@@ -15,13 +14,14 @@ class _CartState extends State<Cart> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-       iconTheme: IconThemeData(color:spPrimaryColor),
+        iconTheme: IconThemeData(color: spPrimaryColor),
         backgroundColor: Colors.white,
         shadowColor: null,
-        title: Text('My Cart', style: TextStyle(color: spPrimaryColor), ),
-        
+        title: Text(
+          'My Cart',
+          style: TextStyle(color: spPrimaryColor),
+        ),
       ),
-
       body: new Cart_products(),
       bottomNavigationBar: new Container(
           color: Colors.white,

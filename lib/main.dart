@@ -8,9 +8,7 @@ import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-   FirebaseApp app = await Firebase.initializeApp();
-  runApp(MaterialApp(
-      debugShowCheckedModeBanner: false, //remove debug banner
-      home: SplashScreen()));
+  FirebaseApp app = await Firebase.initializeApp();
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: SplashScreen()));
   View();
 }

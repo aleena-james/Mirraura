@@ -28,16 +28,6 @@ class ProfilePage extends StatelessWidget {
                 size: 50,
               ),
             ),
-            // Center(
-            //     child: Padding(
-            //   padding: const EdgeInsets.only(top: 20.0),
-            //   child: Text('Lekha',
-            //       style: TextStyle(
-            //           fontWeight: FontWeight.w800,
-            //           fontSize: 20.0,
-            //           fontFamily: 'Julius Sans One',
-            //           color: spPrimaryColor)),
-            // )),
             Center(
               child: Padding(
                 padding: const EdgeInsets.only(top: 10.0, bottom: 20.0),
@@ -45,42 +35,11 @@ class ProfilePage extends StatelessWidget {
                     style: TextStyle(
                         fontWeight: FontWeight.w800,
                         fontSize: 20.0,
-                        //fontFamily: 'Julius Sans One'
                         color: spPrimaryColor)),
               ),
             ),
             Divider(),
             Container(
-              //  decoration: BoxDecoration(
-              //     border: Border.all(
-              //       color: Colors.green,
-              //       width: 2.0,
-              //       style: BorderStyle.solid),
-
-              //   borderRadius: BorderRadius.only(
-              //     topLeft: Radius.circular(10.0),
-              //     topRight: Radius.circular(10.0),
-              //     bottomLeft: Radius.circular(10.0),
-              //     bottomRight: Radius.circular(10.0),
-              //   ),
-              //    boxShadow:  [
-              //    BoxShadow(
-              //       color: Colors.greenAccent,
-              //       offset: const Offset(
-              //         5.0,
-              //         5.0,
-              //       ),
-              //       blurRadius: 10.0,
-              //       spreadRadius: 2.0,
-              //     ),
-              //    BoxShadow(
-              //      color: Colors.white,
-              //      offset: const Offset(0.0, 0.0),
-              //      blurRadius: 0.0,
-              //      spreadRadius: 0.0,
-              //    ),
-              //   ],
-              //  color: spPrimaryTextColor,),
               child: Column(
                 children: [
                   Padding(

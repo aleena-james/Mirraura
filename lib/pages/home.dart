@@ -8,9 +8,6 @@ import 'package:mirraura/pages/bookmark.dart';
 import 'package:mirraura/pages/profile.dart';
 import 'package:mirraura/pages/setting.dart';
 
-
-
-
 class HomePage extends StatefulWidget {
   late String curemail;
   HomePage(this.curemail);
@@ -21,7 +18,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   late String curemail;
   _HomePageState(this.curemail);
-  TextEditingController _searchController =  TextEditingController();
+  TextEditingController _searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     Widget imagecarosel = new Container(
@@ -34,7 +31,7 @@ class _HomePageState extends State<HomePage> {
           AssetImage('images/sale.jpg'),
           AssetImage('images/sales.png'),
           AssetImage('images/jon.jpg'),
-           AssetImage('images/m1.jpg'),
+          AssetImage('images/m1.jpg'),
           AssetImage('images/w3.jpeg'),
         ],
         autoplay: true,
@@ -45,7 +42,7 @@ class _HomePageState extends State<HomePage> {
     );
     return Scaffold(
       appBar: new AppBar(
-        iconTheme: IconThemeData(color:spPrimaryColor),
+        iconTheme: IconThemeData(color: spPrimaryColor),
         backgroundColor: Colors.white,
         shadowColor: Colors.white,
         title: Material(
@@ -55,16 +52,13 @@ class _HomePageState extends State<HomePage> {
           child: TextFormField(
             //controller: _searchController,
             decoration: InputDecoration(
-              icon: Icon(Icons.search),
-               // contentPadding: const EdgeInsets.all(10.0),
-               // hintText: "Search...",
+                icon: Icon(Icons.search),
+                // contentPadding: const EdgeInsets.all(10.0),
+                // hintText: "Search...",
                 border: InputBorder.none),
-           
           ),
-         
         ),
         actions: <Widget>[
-         
           new IconButton(
             icon: Icon(
               Icons.shopping_cart,
@@ -75,7 +69,6 @@ class _HomePageState extends State<HomePage> {
                   context, MaterialPageRoute(builder: (context) => new Cart()));
             },
           ),
-          
         ],
       ),
       drawer: new Drawer(
@@ -99,7 +92,12 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             InkWell(
-              onTap: () { Navigator.push(context,MaterialPageRoute(builder: (context)=> new ProfilePage(curemail)));},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => new ProfilePage(curemail)));
+              },
               child: ListTile(
                 title: Text('Profile'),
                 leading: Icon(
@@ -135,11 +133,16 @@ class _HomePageState extends State<HomePage> {
             ),
 
             InkWell(
-              onTap: () { Navigator.push(context, MaterialPageRoute(builder: (context)=> new BookmarkPage()));},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => new BookmarkPage()));
+              },
               child: ListTile(
                 title: Text('Bookmark'),
                 leading: Icon(
-                 Icons.bookmark,
+                  Icons.bookmark,
                   color: spPrimaryColor,
                 ),
               ),
@@ -147,7 +150,12 @@ class _HomePageState extends State<HomePage> {
 
             Divider(),
             InkWell(
-              onTap: () { Navigator.push(context,MaterialPageRoute(builder: (context)=> new SettingPage(curemail)));},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => new SettingPage(curemail)));
+              },
               child: ListTile(
                 title: Text('Settings'),
                 leading: Icon(Icons.settings, color: Colors.black),
@@ -174,25 +182,7 @@ class _HomePageState extends State<HomePage> {
             child: new Text('Categories'),
           ),
           HorizontalList(),
-
           imagecarosel,
-          //padding widget
-
-      //    Container(
-      // padding: const EdgeInsets.all(4.0),
-      // child: DropdownSearch<String>(
-      // mode: Mode.MENU,
-      // showSelectedItem: true,
-      // items:["Women", "Men", "Kids", "Price"],
-      // label: "Filter",
-      // hint: "sort out in menu mode",
-      //onChanged:(value){
-       // if(value=="Women")
-          // return Navigator.of(context,MaterialPageRouter(buiid: (context)=>;));
-     // },
-    //   selectedItem: "Women"),
-    // ),
-
           new Padding(
             padding: const EdgeInsets.all(23.0),
             child: new Text('New Arrivals'),

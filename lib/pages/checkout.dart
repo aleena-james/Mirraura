@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CheckoutView extends StatefulWidget {
-  //EmailProvider emailProvider;
   CheckoutView();
-  // CheckoutView(this.emailProvider);
   @override
   _CheckoutViewState createState() => _CheckoutViewState();
 }
@@ -17,7 +15,6 @@ class _CheckoutViewState extends State<CheckoutView> {
       ),
       body: Column(
         children: [
-          //  new Cart_products(),
           Container(),
         ],
       ),
