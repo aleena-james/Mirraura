@@ -10,7 +10,7 @@ class Dress extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: spPrimaryColor,
-        title: Text("  Category:"),
+        title: Text("Category"),
         actions: <Widget>[
           new IconButton(
             icon: Icon(

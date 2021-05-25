@@ -6,6 +6,8 @@ import 'package:mirraura/pages/cart.dart';
 import 'package:mirraura/components/products.dart';
 import 'package:mirraura/pages/bookmark.dart';
 import 'package:mirraura/pages/profile.dart';
+import 'package:mirraura/pages/setting.dart';
+
 
 
 
@@ -29,8 +31,10 @@ class _HomePageState extends State<HomePage> {
         boxFit: BoxFit.cover,
         images: [
           AssetImage('images/background2.jpg'),
-          AssetImage('images/c1.jpg'),
-          AssetImage('images/m1.jpeg'),
+          AssetImage('images/sale.jpg'),
+          AssetImage('images/sales.png'),
+          AssetImage('images/jon.jpg'),
+           AssetImage('images/m1.jpg'),
           AssetImage('images/w3.jpeg'),
         ],
         autoplay: true,
@@ -143,7 +147,7 @@ class _HomePageState extends State<HomePage> {
 
             Divider(),
             InkWell(
-              onTap: () {},
+              onTap: () { Navigator.push(context,MaterialPageRoute(builder: (context)=> new SettingPage(curemail)));},
               child: ListTile(
                 title: Text('Settings'),
                 leading: Icon(Icons.settings, color: Colors.black),
