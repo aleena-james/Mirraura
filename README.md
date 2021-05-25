@@ -8,7 +8,7 @@
 ## Team Id
    BFH/recEApEI7EAa6NutR/2021
 ## Link to product walkthrough
-[link to video]
+[**Click here to watch the video**](https://drive.google.com/drive/folders/1WJboET-TzX9k_6IFF9ntfbzy7dRHJMrE?usp=sharing)
 ## How it Works ?
 1. The app starts with a splash screen displaying name of the project
 2. Then enters into the login/signup page where you will be provided with login and signup option.
@@ -22,7 +22,7 @@
 10. The cart icon on the appbar and 'My Cart' option in the drawer will take you to Cart page from where you can checkout to pay
 11. This will take you to the payment page.
 12. Settings option in the drawer will take you to settings page from where you can logout of your account.
-13. Embed video of project demo
+
 
 ## Libraries used
 carousel_pro:           ^1.0.0
